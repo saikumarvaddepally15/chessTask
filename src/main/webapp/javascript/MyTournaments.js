@@ -61,7 +61,8 @@ function createCard1(data,index){
   <div class="card" id="card${index}">
     
     <label class="label" id="name${index}">Tournament Name:${data.name}</label>
-    <label class="label" id="date${index}">Date:${data.dateRange}</label>       
+    <label class="label" id="sDate${index}">Date:${data.startDate}</label>
+    <label class="label" id="eDate${index}">Date:${data.endDate}</label>
     <label class="label" id="location${index}">Location:${data.locationInput}</label>       
     <label class="label" id="rounds${index}">No.of Rounds:${data.rounds}</label>
     <label class="label" id="duration${index}">Duration:${data.duration}</label>
@@ -76,7 +77,8 @@ function createCard2(data,index){
   <div class="card" id="card${index}" onclick="arrowBtn(${data.tournamentId},${data.rounds},${data.win},${data.loss},${data.bye},${data.draw})")>
     <div style="float:left; width:75%;">
         <label class="label" id="name${index}">Tournament Name:${data.name}</label>
-        <label class="label" id="date${index}">Date:${data.dateRange}</label>       
+        <label class="label" id="sDate${index}">StartDate:${data.startDate}</label>
+        <label class="label" id="eDate${index}">EndDate:${data.endDate}</label>
         <label class="label" id="location${index}">Location:${data.locationInput}</label>       
         <label class="label" id="rounds${index}">No.of Rounds:${data.rounds}</label>
         <label class="label" id="duration${index}">Duration:${data.duration}</label>

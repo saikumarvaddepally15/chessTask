@@ -30,8 +30,8 @@ public class Registration {
         }
     }
 
-    public int addUser(String name,String email,String password){
-        String query="insert into users(Name,Email,password) values('"+name+"','"+email+"','"+password+"')";
+    public int addUser(String name, String email, String password){
+        String query="insert into USER(NAME,EMAIL,PASSWORD) values('"+name+"','"+email+"','"+password+"')";
 
         try {
             Statement statement = connection.createStatement();

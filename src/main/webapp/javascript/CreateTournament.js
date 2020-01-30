@@ -1,5 +1,6 @@
  var name="";
- var daterange="";
+ var startDate="";
+ var endDate="";
  var locationInput="";
 function openPage(pageName) {
     var i, tabcontent;
@@ -14,28 +15,12 @@ function openPage(pageName) {
   
   document.getElementById("defaultOpen").click();
   
-  $(function() {
-    
-    $('input[name="datefilter"]').daterangepicker({
-        autoUpdateInput: false,
-        locale: {
-            cancelLabel: 'Clear'
-        }
-    });
-    
-    $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-        $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-    });
-    
-    $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-        $(this).val('');
-    });
-  
-  });
+
 
   $("#nextBtn").on("click",function(){
     name=$("#name").val();
-    daterange=$("#daterange").val();
+    startDate=$("#startdate").val();
+    endDate=$("#enddate").val();
     locationInput=$("#location").val();
 
 
@@ -46,10 +31,6 @@ function openPage(pageName) {
   });
 
   $("#createBtn").on("click",function(){
-
-    console.log(name);
-    console.log(daterange);
-    console.log(locationInput);
 
     var rounds=$("#rounds").val();
     var duration=$("#duration").val();
@@ -68,7 +49,8 @@ function openPage(pageName) {
 
     $.post('createTournament',{
       name:name,
-      daterange:daterange,
+      startDate:startDate,
+      endDate:endDate,
       locationInput:locationInput,
       rounds:rounds,
       duration:duration,

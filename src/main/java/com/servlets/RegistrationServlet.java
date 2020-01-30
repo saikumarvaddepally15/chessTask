@@ -3,8 +3,6 @@ package com.servlets;
 import com.chess.Registration;
 import com.database.DatabaseConnection;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,12 +18,13 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         //System.out.println(req.getParameter("eid"));
+        //int player_id= Integer.parseInt(req.getParameter("player_id"));
         String name=req.getParameter("name");
         String email=req.getParameter("email");
         String password=req.getParameter("password");
 
         DatabaseConnection databaseConnection=new DatabaseConnection();
-        String query="select *from users where Email='"+email+"'";
+        String query="select *from USER where EMAIL='"+email+"'";
         ResultSet rs=databaseConnection.selectQuery2(query);
         try{
             if(!rs.next()){

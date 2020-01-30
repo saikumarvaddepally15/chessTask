@@ -18,7 +18,7 @@ public class PlayerDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int tournamentId=Integer.parseInt(req.getParameter("ID"));
-        String query="select *from users u,PlayersIn p where p.TournamentID="+tournamentId+" and u.ID=p.ID";
+        String query="select *from USER u,PLAYERS_IN_TOURNAMENT p where p.TOURNAMENT_ID="+tournamentId+" and u.PLAYER_ID=p.ID";
         PlayerManager playerManager=new PlayerManager();
         List<Player> players=playerManager.getPlayerDetails(query);
         Gson gson=new Gson();

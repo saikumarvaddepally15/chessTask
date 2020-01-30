@@ -1,9 +1,12 @@
 package com.chess;
 
+import java.util.Date;
+
 public class Tournament {
     private int tournamentId;
     private String name;
-    private String dateRange;
+    private Date startDate;
+    private Date endDate;
     private String locationInput;
     private int rounds;
     private String duration;
@@ -19,10 +22,11 @@ public class Tournament {
 
     }
 
-    public Tournament(int tournamentId, String name, String dateRange, String locationInput, int rounds, String duration, int win, int loss, int bye, int draw, int createdBy, int roundsCompleted, String result) {
+    public Tournament(int tournamentId, String name, Date startDate, Date endDate, String locationInput, int rounds, String duration, int win, int loss, int bye, int draw, int createdBy, int roundsCompleted, String result) {
         this.tournamentId = tournamentId;
         this.name = name;
-        this.dateRange = dateRange;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.locationInput = locationInput;
         this.rounds = rounds;
         this.duration = duration;
@@ -75,13 +79,22 @@ public class Tournament {
         this.name = name;
     }
 
-    public String getDateRange() {
-        return dateRange;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setDateRange(String dateRange) {
-        this.dateRange = dateRange;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
 
     public String getLocationInput() {
         return locationInput;

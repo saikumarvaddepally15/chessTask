@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name="createdTournaments",urlPatterns = "/created")
+@WebServlet(name="createdTournaments",urlPatterns = "/Tournament")
 public class CreatedTournamentServlets extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int TournamentId= Integer.parseInt(req.getParameter("ID"));
-        String query="select * from Tournament where CREATED_BY="+TournamentId+"";
+        String query="select * from TOURNAMENT where CREATED_BY="+TournamentId+"";
 
         TournamentManager tournamentManager=new TournamentManager();
         List<Tournament> createdTournament=tournamentManager.getTournamentDetails(query);

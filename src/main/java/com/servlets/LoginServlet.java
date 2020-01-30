@@ -2,14 +2,15 @@ package com.servlets;
 
 import com.database.DatabaseConnection;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @WebServlet(name="login",urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
@@ -21,7 +22,7 @@ public class LoginServlet extends HttpServlet {
         String password=req.getParameter("password");
         resp.setContentType("text/plain");
 
-        String query="select * from users where Email=? and password=?";
+        String query="select * from USER where Email=? and password=?";
         DatabaseConnection databaseConnection=new DatabaseConnection();
 
         try {
